@@ -1,5 +1,6 @@
 const c = new Compat();
 const commandManager = new CommandManager(
+    new HelpCommand(),
     new HistoryCommand(),
 );
 
