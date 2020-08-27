@@ -14,7 +14,7 @@ omnibox.bootstrap({
     },
     onFormat: (index, doc) => {
         return {
-            content: `https://en.cppreference.com/w/${doc.path}`,
+            content: settings.isOfflineMode ? `${settings.offlineDocPath}${doc.path}.html` : `https://en.cppreference.com/w/${doc.path}`,
             description: `[${doc.path.startsWith("cpp") ? "C++" : "C"}] ${c.match(doc.name)}`,
         }
     },
