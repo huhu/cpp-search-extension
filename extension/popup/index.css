@@ -34,6 +34,11 @@
     align-items: start;
 }
 
+.offline-doc-path {
+    width: 100%;
+    margin: 5px 0;
+}
+
 .toggle {
     position: relative;
     display: inline-block;

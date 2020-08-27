@@ -34,6 +34,17 @@
         <img class="logo" src="../icon.png" alt="c/c++-search-extension">
         <div class="title">C/C++ Search Extension</div>
     </div>
+    <div style="margin-top: 20px" class="flex-vertical">
+        <div>
+            Enable offline mode
+            <label class="toggle">
+                <input type="checkbox" id="offline-mode">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <input type="text" class="offline-doc-path" placeholder="Input the local doc path">
+        <small class="offline-doc-message"></small>
+    </div>
     <div style="margin-top: 30px; font-size: 11px;text-align: center">
         <a href="https://cpp.extension.sh" target="_blank">Website</a>
         <a href="https://cpp.extension.sh/changelog" target="_blank">Changelog</a>
@@ -41,5 +52,7 @@
     </div>
 </div>
 </body>
+<script src="../core/toast.js"></script>
+<script src="../settings.js"></script>
 <script src="index.js"></script>
 </html>
