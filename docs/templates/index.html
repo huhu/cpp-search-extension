@@ -1,0 +1,68 @@
+{% extends "juice/templates/index.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path="index.css") }}">
+{% endblock head %}
+{% block hero %}
+<section style="padding:10px">
+    <h1 class="text-center heading-text">
+        The ultimate search extension for C/C++
+    </h1>
+    <h3 class="text" style="text-align: center;">
+        Input keyword <b>cc</b> then press
+        <code>Space</code> in the address bar
+        to get started. Just that easy!
+    </h3>
+    <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
+        <a class="subtitle-text" style="text-decoration: underline; margin: 10px"
+           href="https://github.com/huhu/cpp-search-extension/releases">
+            Current version 0.1.0
+        </a>
+        <a class="btn-download chrome"
+           href="https://chrome.google.com/webstore/detail/golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb"
+           target="_blank">
+            Install to Chrome
+        </a>
+        <a class="btn-download firefox" href="https://addons.mozilla.org/en-US/firefox/addon/go-search-extension/"
+           target="_blank">
+            Install to Firefox
+        </a>
+        <a class="btn-download edg"
+           href="https://microsoftedge.microsoft.com/addons/detail/ebibclchdmagkhopidkjckjkbhghfehh"
+           target="_blank">
+            Install to Edge
+        </a>
+    </div>
+</section>
+<img class="gopher" src="{{ get_url(path="") }}" alt="C/C++">
+<div class="explore-more text"
+     onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    Explore More ⇩
+</div>
+<script>
+    function mobilizeDownloadButton() {
+        let navigator = window.navigator.userAgent.toLocaleLowerCase();
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('.btn-download').forEach((element) => {
+                element.classList.add('hide');
+            });
+            let target = ['firefox', 'edg'].find(item => navigator.includes(item)) || 'chrome';
+            document.querySelector(`.${target}`).classList.remove('hide');
+        } else {
+            document.querySelectorAll('.btn-download').forEach((element) => {
+                element.classList.remove('hide');
+            });
+        }
+    }
+    mobilizeDownloadButton();
+    window.onresize = function () { mobilizeDownloadButton() };
+</script>
+{% endblock %}
+{% block footer %}
+<iframe id="footer" src="https://huhu.io/extension-footer.html"
+        style="display:block;width:100%;border:none;"></iframe>
+<script>
+    window.onmessage = e => {
+        e.data.hasOwnProperty("frameHeight") && (document.getElementById("footer").style.height = `${e.data.frameHeight}px`)
+    }
+</script>
+{% endblock footer %}
