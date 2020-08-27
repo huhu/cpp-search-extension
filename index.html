@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #bae8e8;
+        /* Primary theme text color */
+        --primary-text-color: #272343;
+        /* Primary theme link color */
+        --primary-link-color: #3C4577;
+        /* Secondary color: the background body color*/
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        --toc-highlight-text-color: #4356c2;
+    }
+</style>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="&#x2F;juice.css">
+    
+<link rel="stylesheet" href="&#x2F;index.css">
+
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="&#x2F;">
+    <div class="logo">
+        <img src="&#x2F;logo.png" alt="logo">
+        C&#x2F;C++ Search Extension
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;privacy&#x2F;">Privacy</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;huhu&#x2F;cpp-search-extension">Github</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+<section style="padding:10px">
+    <h1 class="text-center heading-text">
+        The ultimate search extension for C/C++
+    </h1>
+    <h3 class="text" style="text-align: center;">
+        Input keyword <b>cc</b> then press
+        <code>Space</code> in the address bar
+        to get started. Just that easy!
+    </h3>
+    <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
+        <a class="subtitle-text" style="text-decoration: underline; margin: 10px"
+           href="https://github.com/huhu/cpp-search-extension/releases">
+            Current version 0.1.0
+        </a>
+        <a class="btn-download chrome"
+           href="https://chrome.google.com/webstore/detail/golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb"
+           target="_blank">
+            Install to Chrome
+        </a>
+        <a class="btn-download firefox" href="https://addons.mozilla.org/en-US/firefox/addon/go-search-extension/"
+           target="_blank">
+            Install to Firefox
+        </a>
+        <a class="btn-download edg"
+           href="https://microsoftedge.microsoft.com/addons/detail/ebibclchdmagkhopidkjckjkbhghfehh"
+           target="_blank">
+            Install to Edge
+        </a>
+    </div>
+</section>
+<img class="gopher" src="" alt="C/C++">
+<div class="explore-more text"
+     onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    Explore More ⇩
+</div>
+<script>
+    function mobilizeDownloadButton() {
+        let navigator = window.navigator.userAgent.toLocaleLowerCase();
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('.btn-download').forEach((element) => {
+                element.classList.add('hide');
+            });
+            let target = ['firefox', 'edg'].find(item => navigator.includes(item)) || 'chrome';
+            document.querySelector(`.${target}`).classList.remove('hide');
+        } else {
+            document.querySelectorAll('.btn-download').forEach((element) => {
+                element.classList.remove('hide');
+            });
+        }
+    }
+    mobilizeDownloadButton();
+    window.onresize = function () { mobilizeDownloadButton() };
+</script>
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+
+        <div class="content text">
+            
+            <div id="features" class="heading-text">Overview</div>
+            
+            
+        </div>
+
+    </main>
+
+    
+<iframe id="footer" src="https://huhu.io/extension-footer.html"
+        style="display:block;width:100%;border:none;"></iframe>
+<script>
+    window.onmessage = e => {
+        e.data.hasOwnProperty("frameHeight") && (document.getElementById("footer").style.height = `${e.data.frameHeight}px`)
+    }
+</script>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
