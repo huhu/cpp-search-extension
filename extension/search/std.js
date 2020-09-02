@@ -25,10 +25,11 @@ StdSearcher.prototype.search = function (keyword) {
         }
         return a.matchIndex - b.matchIndex;
     }).map(item => {
-        let [path] = this.index[item.name];
+        let [path, description] = this.index[item.name];
         return {
             name: item.name,
             path,
+            description,
         }
     });
 };
