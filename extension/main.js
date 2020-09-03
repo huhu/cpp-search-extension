@@ -2,6 +2,7 @@ const c = new Compat();
 const cppSearcher = new StdSearcher(searchIndex);
 const commandManager = new CommandManager(
     new HelpCommand(),
+    new HeaderCommand(headersIndex),
     new HistoryCommand(),
 );
 
