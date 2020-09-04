@@ -5,6 +5,7 @@ base_url = "/"
 compile_sass = true
 
 # Whether to do syntax highlighting
+highlight_theme = "inspired-github"
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
