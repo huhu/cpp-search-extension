@@ -7,7 +7,7 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/epanejkfcekejmmfbcpbcbigfpefbnlb.svg)
 ![Mozilla Add-on](https://img.shields.io/amo/v/cpp-search-extension?color=%2320123A)
 ![Microsoft Edge](https://img.shields.io/badge/microsoft--edge-0.1.0-1D4F8C)
-[![license-mit](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/huhu/cpp-search-extension/blob/master/LICENSE)
+[![license-apache](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/huhu/cpp-search-extension/blob/master/LICENSE)
 
 [https://cpp.extension.sh/](https://cpp.extension.sh/)
 
@@ -23,7 +23,8 @@
 ## Features
 
 - Search standard library docs
-- Builtin commands
+- Offline mode supported
+- Builtin commands (`:header` and `:history` etc)
 
 ## How to use it
    
