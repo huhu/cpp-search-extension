@@ -5,7 +5,6 @@ function StdSearcher(rawIndex) {
 
 StdSearcher.prototype.search = function (keyword) {
     let result = [];
-    keyword = keyword.replace(/[-_\s]/g, "");
     for (let doc of this.docs) {
         if (doc.length < keyword.length) continue;
 
