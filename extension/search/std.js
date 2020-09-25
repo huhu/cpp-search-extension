@@ -4,11 +4,12 @@ function StdSearcher(rawIndex) {
 }
 
 StdSearcher.prototype.search = function (keyword) {
+    keyword = keyword.toLowerCase();
     let result = [];
     for (let doc of this.docs) {
         if (doc.length < keyword.length) continue;
 
-        let index = doc.indexOf(keyword);
+        let index = doc.toLowerCase().indexOf(keyword);
         if (index !== -1) {
             result.push({
                 name: doc,
