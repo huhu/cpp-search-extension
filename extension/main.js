@@ -22,7 +22,7 @@ omnibox.bootstrap({
     onAppend: (query) => {
         return [{
             content: `https://en.cppreference.com/mwiki/index.php?search=${query}`,
-            description: `Search C/C++ docs ${c.match(query)} on cppreference.com`,
+            description: `Search C/C++ docs ${c.match(c.escape(query))} on cppreference.com`,
         }];
     },
     afterNavigated: (query, result) => {
