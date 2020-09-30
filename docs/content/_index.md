@@ -8,11 +8,15 @@ sort_by = "weight"
 We built an offline search index for C/C++ std library based on [cppreference.com](https://en.cppreference.com/w/).
 Input any keyword in the address bar, you'll get the result instantly. It's blaze-fast!  
 
+![GIF](/cpp-search-extension.gif)
+
 # Offline mode
 
 You can download the offline archive from [Cppreference archiven page](https://en.cppreference.com/w/Cppreference:Archives).
 To enable the offline mode, you should check the checkbox and input the offline docs path on the popup page.
 However, please check the [Caveats](/faq/#caveats) if you are a Firefox user.
+
+![GIF](/offline-mode.gif)
 
 # Command systems
 
@@ -21,6 +25,8 @@ The command system brings a handy set of useful and convenient commands to you. 
 - `:help` - Show the help messages.
 - `:header` - Show all C++ header libraries.
 - `:history` - Show your local search history
+
+![GIF](/commands.png)
 
 # Miscellaneous
 
