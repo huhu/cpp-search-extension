@@ -1,7 +1,7 @@
 // Don't use /g mode, otherwise regex.test() would return an alternating result.
 // See https://stackoverflow.com/a/2630538/2220110
 const REGEX_DOC_PATH_FILE = /(^file:\/\/.*\/reference\/en\/)(.*)/i;
-const REGEX_DOC_PATH_HTTP = /(^https?:\/\/.*:\d{2,6}\/)(.*)/i;
+const REGEX_DOC_PATH_HTTP = /(^https?:\/\/.*:\d{2,6}\/en\/)(.*)/i;
 
 const settings = {
     get isOfflineMode() {
