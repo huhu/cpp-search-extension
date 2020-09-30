@@ -4,8 +4,8 @@
 
 ### The ultimate search extension for C/C++.
 
-![Chrome Web Store](https://img.shields.io/chrome-web-store/v/epanejkfcekejmmfbcpbcbigfpefbnlb.svg)
-![Mozilla Add-on](https://img.shields.io/amo/v/cpp-search-extension?color=%2320123A)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ifpcmhciihicaljnhgobnhoehoabidhd.svg)
+![Mozilla Add-on](https://img.shields.io/amo/v/c-c-search-extension?color=%2320123A)
 ![Microsoft Edge](https://img.shields.io/badge/microsoft--edge-0.1.0-1D4F8C)
 [![license-apache](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/huhu/cpp-search-extension/blob/master/LICENSE)
 
@@ -13,11 +13,11 @@
 
 ## Installation
 
-- [Chrome Web Store](https://chrome.google.com/webstore/detail/cpp-search-extension/epanejkfcekejmmfbcpbcbigfpefbnlb)
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd)
 
-- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cpp-search-extension/)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/c-c-search-extension/)
 
-- [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ebibclchdmagkhopidkjckjkbhghfehh)
+- [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ffajabficigcddnckikojejmkammkmpe)
 
 
 ## Features
