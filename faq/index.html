@@ -73,7 +73,7 @@
                 
                 
                 <div class="toc-item-child">
-                    <a class="subtext" href="/faq/#why-the-extension-requires-read-browsing-history-permission"><small>- Why the extension requires read browsing history permission?</small></a>
+                    <a class="subtext" href="/faq/#why-the-extension-requires-reading-browsing-history-permission"><small>- Why the extension requires reading browsing history permission?</small></a>
                 </div>
                 
                 
@@ -84,7 +84,7 @@
                 
                 
                 <div class="toc-item-child">
-                    <a class="subtext" href="/faq/#why-local-file-rust-doc-not-work-properly-on-firefox"><small>- Why local file: rust doc not work properly on Firefox?</small></a>
+                    <a class="subtext" href="/faq/#why-local-file-doc-not-work-properly-on-firefox"><small>- Why local file: doc not work properly on Firefox?</small></a>
                 </div>
                 
                 <div class="toc-item-child">
@@ -102,21 +102,21 @@
             
 <div class="heading-text">Frequently asked questions</div>
 <h1 id="permissions">Permissions</h1>
-<h3 id="why-the-extension-requires-read-browsing-history-permission">Why the extension requires read browsing history permission?</h3>
+<h3 id="why-the-extension-requires-reading-browsing-history-permission">Why the extension requires reading browsing history permission?</h3>
 <p>The sole permission required by the extension is <a href="https://developer.chrome.com/extensions/tabs">tabs</a>, which gives accessing browser tabs information capability. 
-We use this permission to open the search result in the <code>current tab</code> or <code>new tab</code> for the sole purpose. Feel feel to check our <a href="/privacy/">Privacy Policy</a> for more information. </p>
+We use this permission to open the search result in the <code>current tab</code> or <code>new tab</code> for the sole purpose. Feel free to check our <a href="/privacy/">Privacy Policy</a> for more information. </p>
 <h1 id="caveats">Caveats</h1>
-<h3 id="why-local-file-rust-doc-not-work-properly-on-firefox">Why local <code>file:</code> rust doc not work properly on Firefox?</h3>
+<h3 id="why-local-file-doc-not-work-properly-on-firefox">Why local <code>file:</code> doc not work properly on Firefox?</h3>
 <p>For security reasons, in Firefox, <code>file:</code> URLs is an unprivileged URL, accessing to those unprivileged URLs are prohibited. 
 See the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/create">MDN documentation</a> for more detail.</p>
 <h3 id="any-workaround-to-support-offline-mode-on-firefox">Any workaround to support offline mode on Firefox?</h3>
 <p>Sure. A good choice is use http server! For example using python <strong>http.server</strong> module:</p>
 <pre style="background-color:#ffffff;">
-<code><span style="color:#323232;">$ cd your-rust-doc-directory
+<code><span style="color:#323232;">$ cd ~/Downloads/html-book-20200913/reference
 $ python -m http.server
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 </span></code></pre>
-<p>Then set <code>http://0.0.0.0:8000</code> as your local doc path.</p>
+<p>Then set <code>http://0.0.0.0:8000/en</code> as your local doc path.</p>
 
 
         </div>
