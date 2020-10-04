@@ -4,7 +4,7 @@ description = "Changelog"
 weight = 3
 +++
 
-# v0.1 - 2020-09-15
+# v0.1 - 2020-09-30
 
 First release version! 🎉🥳🥳
 
