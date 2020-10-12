@@ -20,3 +20,5 @@ juice_logo_path = "logo.png"
 juice_extra_menu = [
     { title = "Github", link = "https://github.com/huhu/cpp-search-extension"}
 ]
+meta_title = "C/C++ Search Extension: The ultimate search extension for C/C++"
+meta_description = "Input keyword cc then press Space in the address bar to get started. Just that easy!"
