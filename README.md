@@ -8,6 +8,7 @@
 ![Mozilla Add-on](https://img.shields.io/amo/v/c-c-search-extension?color=%2320123A)
 ![Microsoft Edge](https://img.shields.io/badge/microsoft--edge-0.1.0-1D4F8C)
 [![license-apache](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/huhu/cpp-search-extension/blob/master/LICENSE)
+[![Discord](https://img.shields.io/discord/711895914494558250?label=chat&logo=discord)](https://discord.gg/xucZNVd)
 
 [https://cpp.extension.sh/](https://cpp.extension.sh/)
 
@@ -47,5 +48,5 @@ $ make edge # For Edge version
 
 ## Get involved
 
-- You can contact us on Discord Channel: https://discord.com/invite/UAzW4A
+- You can contact us on Discord Channel: https://discord.gg/xucZNVd
 - Or by adding the Wechat ID: `huhu_io`, we'll invite you to our Wechat group.
