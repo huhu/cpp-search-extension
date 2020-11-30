@@ -35,6 +35,11 @@ you want to search, the extension will response the related search results insta
 ## Contribution
 
 ```bash
+# Installing jsonnet first if you havn't installed it yet, we employ jsonnet to generate manifest.json
+sudo apt update
+sudo apt install snapd
+sudo snap install jsonnet
+
 $ git clone --recursive https://github.com/huhu/cpp-search-extension
 Cloning into 'cpp-search-extension'...
 $ cd cpp-search-extension
