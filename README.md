@@ -34,11 +34,14 @@ you want to search, the extension will response the related search results insta
 
 ## Contribution
 
+`jsonnet` is required before getting started. To install `jsonnet`, please check `jsonnet`'s [README](https://github.com/google/jsonnet#packages)
+
 ```bash
-# Installing jsonnet first if you havn't installed it yet, we employ jsonnet to generate manifest.json
-sudo apt update
-sudo apt install snapd
-sudo snap install jsonnet
+# If you are using Linux, you could use following commands to install jsonnet, for reference only
+# For other platforms or any installation qustion, please check the link given above.
+# $ sudo apt update
+# $ sudo apt install snapd
+# $ sudo snap install jsonnet
 
 $ git clone --recursive https://github.com/huhu/cpp-search-extension
 Cloning into 'cpp-search-extension'...
