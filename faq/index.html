@@ -163,7 +163,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
         document.querySelectorAll(".toc a").forEach((item) => {
             item.classList.remove("active");
         });
-        document.querySelector(".toc a[href='" + pathname + "#" + heading + "']").classList.add("active");
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
     }
 
     let currentHeading = "";
