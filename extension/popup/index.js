@@ -1,6 +1,30 @@
 const toast = new Toast(".toast");
+const LANGUAGES = {
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français",
+    "it": "Italiano",
+    "ja": "日本語",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文"
+};
 
 document.addEventListener('DOMContentLoaded', function () {
+    const languageSelect = document.getElementById('language');
+    Object.entries(LANGUAGES).forEach(([value, lang]) => {
+        let opt = document.createElement('option');
+        opt.value = value;
+        opt.innerHTML = lang;
+        languageSelect.appendChild(opt);
+    });
+    languageSelect.value = settings.language;
+    languageSelect.onchange = (event) => {
+        let value = event.target.value;
+        settings.language = event.target.value;
+    };
+
     // Offline mode checkbox
     if (!settings.offlineDocPath) {
         // If the offline doc path not exists, turn off the offline mode.

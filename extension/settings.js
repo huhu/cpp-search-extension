@@ -4,6 +4,12 @@ const REGEX_DOC_PATH_FILE = /(^file:\/\/.*\/reference\/en\/)(.*)/i;
 const REGEX_DOC_PATH_HTTP = /(^https?:\/\/.*:\d{2,6}\/en\/)(.*)/i;
 
 const settings = {
+    get language() {
+        return localStorage.getItem('language');
+    },
+    set language(value) {
+        localStorage.setItem('language', value);
+    },
     get isOfflineMode() {
         return JSON.parse(localStorage.getItem('offline-mode')) || false;
     },
