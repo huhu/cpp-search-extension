@@ -15,13 +15,13 @@ omnibox.bootstrap({
     },
     onFormat: (index, doc) => {
         return {
-            content: settings.isOfflineMode && settings.offlineDocPath ? `${settings.offlineDocPath}${doc.path}.html` : `https://en.cppreference.com/w/${doc.path}`,
+            content: settings.isOfflineMode && settings.offlineDocPath ? `${settings.offlineDocPath}${doc.path}.html` : `https://${settings.language}.cppreference.com/w/${doc.path}`,
             description: `[${doc.path.startsWith("cpp") ? "C++" : "C"}] ${c.match(c.escape(doc.name))} - ${c.dim(c.escape(doc.description))}`,
         }
     },
     onAppend: (query) => {
         return [{
-            content: `https://en.cppreference.com/mwiki/index.php?search=${query}`,
+            content: `https://${settings.language}.cppreference.com/mwiki/index.php?search=${query}`,
             description: `Search C/C++ docs ${c.match(c.escape(query))} on cppreference.com`,
         }];
     },
