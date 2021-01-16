@@ -1,4 +1,6 @@
 const toast = new Toast(".toast");
+const compat = new Compat();
+
 const LANGUAGES = {
     "en": "English",
     "de": "Deutsch",
@@ -45,10 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
     offlineDocPath.value = settings.offlineDocPath;
     offlineDocPath.onchange = function (event) {
         let path = event.target.value;
+        if(compat.browserType() === 'firefox' && (path.startsWith('/') || path.startsWith('file://')) ) {
+            toast.error("Sorry, Firfox doesn't support `file://` Proto, you can use http server instead.")
+            toast.dismiss(5000);
+            return;
+        }
+
         // Check the std doc path validity
         if (settings.checkDocPathValidity(path)) {
             settings.offlineDocPath = path;
-
             toast.success("Great! Your local doc path is valid!");
         } else {
             // If the offline doc path is invalid, turn off the offline mode.
