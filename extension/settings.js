@@ -5,7 +5,7 @@ const REGEX_DOC_PATH_HTTP = /(^https?:\/\/.*)(:\d{2,6})?(.*)/i;
 
 const settings = {
     get language() {
-        return localStorage.getItem('language');
+        return localStorage.getItem('language') || 'en';
     },
     set language(value) {
         localStorage.setItem('language', value);

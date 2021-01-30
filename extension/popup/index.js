@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     languageSelect.value = settings.language;
     languageSelect.onchange = (event) => {
-        let value = event.target.value;
         settings.language = event.target.value;
     };
 
