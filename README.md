@@ -1,6 +1,6 @@
 # C/C++ Search Extension
 
-<img align="right" width="280" src="extension/icon.png">
+<img align="right" width="280" src="extension/logo.png">
 
 ### The ultimate search extension for C/C++.
 
