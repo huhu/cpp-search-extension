@@ -24,11 +24,16 @@ The command system brings a handy set of useful and convenient commands to you. 
 
 - `:help` - Show the help messages.
 - `:header` - Show all C++ header libraries.
+- `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html).
 - `:history` - Show your local search history
 
 ![GIF](/commands.png)
 
 # Miscellaneous
+
+## Multi-language search
+
+You can configure you prefer language for cppreference docs search in the popup page.
 
 ## Page down/up easily
 

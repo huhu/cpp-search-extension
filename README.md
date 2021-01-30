@@ -25,7 +25,7 @@
 
 - Search standard library docs
 - Offline mode supported
-- Builtin commands (`:header` and `:history` etc)
+- Builtin commands (`:header`, `:posix` and `:history` etc)
 
 ## How to use it
    
