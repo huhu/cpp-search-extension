@@ -3,6 +3,7 @@ const cppSearcher = new StdSearcher(searchIndex);
 const commandManager = new CommandManager(
     new HelpCommand(),
     new HeaderCommand(headersIndex),
+    new PosixCommand(posixIndex),
     new HistoryCommand(),
 );
 
