@@ -12,7 +12,7 @@
         /* Primary theme text color */
         --primary-text-color: #272343;
         /* Primary theme link color */
-        --primary-link-color: #3C4577;
+        --primary-link-color: #1ba090;
         /* Secondary color: the background body color */
         --secondary-color: #fcfaf6;
         --secondary-text-color: #303030;
@@ -96,7 +96,7 @@
     <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
         <a class="subtitle-text" style="text-decoration: underline; margin: 10px"
            href="https://github.com/huhu/cpp-search-extension/releases">
-            Current version 0.1.0
+            Current version 0.2.0
         </a>
         <a class="btn-download chrome"
            href="https://chrome.google.com/webstore/detail/cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd"
@@ -172,6 +172,10 @@
                 
                 
                 <div class="toc-item-child">
+                    <a class="subtext" href="/#multi-language-search"><small>- Multi-language search</small></a>
+                </div>
+                
+                <div class="toc-item-child">
                     <a class="subtext" href="/#page-down-up-easily"><small>- Page down&#x2F;up easily</small></a>
                 </div>
                 
@@ -199,10 +203,13 @@ However, please check the <a href="/faq/#caveats">Caveats</a> if you are a Firef
 <ul>
 <li><code>:help</code> - Show the help messages.</li>
 <li><code>:header</code> - Show all C++ header libraries.</li>
+<li><code>:posix</code> - Show all POSIX <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html">system interfaces</a>.</li>
 <li><code>:history</code> - Show your local search history</li>
 </ul>
 <p><img src="/commands.png" alt="GIF" /></p>
 <h1 id="miscellaneous">Miscellaneous</h1>
+<h2 id="multi-language-search">Multi-language search</h2>
+<p>You can configure you prefer language for cppreference docs search in the popup page.</p>
 <h2 id="page-down-up-easily">Page down/up easily</h2>
 <p>You can press <code>space</code> after the keyword, then increase or decrease the number of <strong>-</strong> (hyphen) to page down or page up.</p>
 
