@@ -31,9 +31,9 @@ The command system brings a handy set of useful and convenient commands to you. 
 
 # Miscellaneous
 
-## Multi-language search
+## Multi-locale language search
 
-You can configure you prefer language for cppreference docs search in the popup page.
+You can configure you prefer locale language for cppreference docs search in the popup page.
 
 ## Page down/up easily
 
