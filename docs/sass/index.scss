@@ -1,3 +1,5 @@
+@import "carbon";
+
 .content img {
   width: 75%;
   height: auto;
@@ -39,6 +41,10 @@
   display: none;
 }
 
+.sidebar {
+  width: 215px;
+}
+
 @media screen and (max-width: 768px) {
   .logo {
     font-size: 16px;
@@ -49,7 +55,18 @@
       margin: 0 10px 0 0;
     }
   }
-  
+
+  main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 215px;
+    margin: 2rem auto 0;
+  }
+
   .explore-more, .demonstration-gif {
     display: none;
   }
