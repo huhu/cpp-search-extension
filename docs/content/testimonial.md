@@ -4,6 +4,10 @@ description = "Testimonials"
 weight = 1
 +++
 
+### From *Luna Lucadou*
+
+> This extension is perfect! Chrome never seems to suggest cpp docs from my history (probably because of std:: being mistaken for a protocol, and "thread", "string", etc. being too generic), so this saves those extra clicks to get to them.
+
 ### From *u/anon_502*
 
 > Awesome! Perhaps I can finally remove Zeal from my laptop.
