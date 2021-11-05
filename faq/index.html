@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>FAQ |  </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
     <style>
     :root {
         /* Primary theme color */
@@ -23,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="&#x2F;juice.css">
+    <link rel="stylesheet" href="/juice.css">
     
 <meta name="keywords"
       content="c, c++, c/c++, cpp, cplusplus, cppreference, docs, search extension">
@@ -49,7 +52,7 @@
 <meta name="twitter:description"
       content="Input keyword cc then press Space in the address bar to get started. Just that easy!">
 <meta name="twitter:image" content="https://cpp.extension.sh/banner.png">
-<link rel="stylesheet" href="&#x2F;index.css">
+<link rel="stylesheet" href="/index.css">
 
 </head>
 
@@ -60,7 +63,7 @@
 
 <a href="&#x2F;">
     <div class="logo">
-        <img src="&#x2F;logo.png" alt="logo">
+        <img src="/logo.png" alt="logo">
         C&#x2F;C++ Search Extension
     </div>
 </a>
@@ -153,11 +156,10 @@ We use this permission to open the search result in the <code>current tab</code>
 See the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/create">MDN documentation</a> for more detail.</p>
 <h3 id="any-workaround-to-support-offline-mode-on-firefox">Any workaround to support offline mode on Firefox?</h3>
 <p>Sure. A good choice is use http server! For example using python <strong>http.server</strong> module:</p>
-<pre style="background-color:#ffffff;">
-<code class="language-sh" data-lang="sh"><span style="color:#323232;">$ cd ~/Downloads/html-book-20200913/reference
+<pre data-lang="sh" class="language-sh "><code class="language-sh" data-lang="sh">$ cd ~&#x2F;Downloads&#x2F;html-book-20200913&#x2F;reference
 $ python -m http.server
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-</span></code></pre>
+Serving HTTP on 0.0.0.0 port 8000 (http:&#x2F;&#x2F;0.0.0.0:8000&#x2F;) ...
+</code></pre>
 <p>Then set <code>http://0.0.0.0:8000/en</code> as your local doc path.</p>
 
 
