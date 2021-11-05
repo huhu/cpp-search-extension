@@ -4,6 +4,10 @@ description = "Testimonials"
 weight = 1
 +++
 
+### From *Khalil Estell*
+
+> Use this extension literally everyday and it makes looking up details in C++ so much faster. This is a great too for C++ power users.
+
 ### From *Luna Lucadou*
 
 > This extension is perfect! Chrome never seems to suggest cpp docs from my history (probably because of std:: being mistaken for a protocol, and "thread", "string", etc. being too generic), so this saves those extra clicks to get to them.
