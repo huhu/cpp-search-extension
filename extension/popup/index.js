@@ -46,21 +46,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     offlineDocPath.value = await settings.offlineDocPath;
     offlineDocPath.onchange = function (event) {
         let path = event.target.value;
-        if(compat.browserType() === 'firefox' && (path.startsWith('/') || path.startsWith('file://')) ) {
+        if (compat.browserType() === 'firefox' && (path.startsWith('/') || path.startsWith('file://'))) {
             toast.error("Sorry, Firfox doesn't support `file://` Proto, you can use http server instead.")
             toast.dismiss(5000);
             return;
         }
 
-        // Check the std doc path validity
-        if (settings.checkDocPathValidity(path)) {
-            settings.offlineDocPath = path;
-            toast.success("Great! Your local doc path is valid!");
-        } else {
-            // If the offline doc path is invalid, turn off the offline mode.
-            offlineModeCheckbox.checked = false;
-            toast.error("Invalid local doc path.");
-        }
+        // Don't validate the doc path. Let the user decide it!
+        settings.offlineDocPath = path;
+        toast.success("Great! Your local doc path is valid!");
         toast.dismiss(3000);
     };
 }, false);
