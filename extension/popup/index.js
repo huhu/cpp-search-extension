@@ -13,7 +13,7 @@ const LANGUAGES = {
     "zh": "中文"
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const languageSelect = document.getElementById('language');
     Object.entries(LANGUAGES).forEach(([value, lang]) => {
         let opt = document.createElement('option');
@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
         opt.innerHTML = lang;
         languageSelect.appendChild(opt);
     });
-    languageSelect.value = settings.language;
+    languageSelect.value = await settings.language;
     languageSelect.onchange = (event) => {
         settings.language = event.target.value;
     };
 
     // Offline mode checkbox
-    if (!settings.offlineDocPath) {
+    if (!(await settings.offlineDocPath)) {
         // If the offline doc path not exists, turn off the offline mode.
         settings.isOfflineMode = false;
     }
     const offlineModeCheckbox = document.getElementById('offline-mode');
-    const checkedState = settings.isOfflineMode;
+    const checkedState = await settings.isOfflineMode;
     offlineModeCheckbox.checked = checkedState;
     toggleOfflinePathEnableState(checkedState);
     offlineModeCheckbox.onchange = function (event) {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Offline doc path
     const offlineDocPath = document.querySelector('.offline-doc-path');
-    offlineDocPath.value = settings.offlineDocPath;
+    offlineDocPath.value = await settings.offlineDocPath;
     offlineDocPath.onchange = function (event) {
         let path = event.target.value;
         if(compat.browserType() === 'firefox' && (path.startsWith('/') || path.startsWith('file://')) ) {

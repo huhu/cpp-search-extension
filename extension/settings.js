@@ -5,19 +5,25 @@ const REGEX_DOC_PATH_HTTP = /(^https?:\/\/.*)(:\d{2,6})?(.*)/i;
 
 const settings = {
     get language() {
-        return localStorage.getItem('language') || 'en';
+        return (async () => {
+            return await storage.getItem('language') || 'en';
+        })();
     },
     set language(value) {
-        localStorage.setItem('language', value);
+        storage.setItem('language', value);
     },
     get isOfflineMode() {
-        return JSON.parse(localStorage.getItem('offline-mode')) || false;
+        return (async () => {
+            return await storage.getItem('offline-mode') || false;
+        })();
     },
     set isOfflineMode(mode) {
-        localStorage.setItem('offline-mode', mode);
+        storage.setItem('offline-mode', mode);
     },
     get offlineDocPath() {
-        return localStorage.getItem('offline-path');
+        return (async () => {
+            return await storage.getItem('offline-path');
+        })();
     },
     set offlineDocPath(path) {
         if (path.startsWith('/')) {
@@ -25,7 +31,7 @@ const settings = {
         }
 
         if ([REGEX_DOC_PATH_FILE, REGEX_DOC_PATH_HTTP].some(regex => regex.test(path))) {
-            localStorage.setItem('offline-path', path);
+            storage.setItem('offline-path', path);
         }
     },
     // Use regex patterns to check user local doc path validity.

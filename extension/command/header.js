@@ -4,7 +4,7 @@ class HeaderCommand extends Command {
         this.headers = index;
     }
 
-    onExecute(arg) {
+    async onExecute(arg) {
         let results = this.headers;
         if (arg) {
             results = [];
@@ -23,9 +23,12 @@ class HeaderCommand extends Command {
                 return a.matchIndex - b.matchIndex;
             });
         }
+
+        let isOfflineMode = await settings.isOfflineMode;
+        let offlineDocPath = await settings.offlineDocPath;
         return results.map(header => {
             return {
-                content: settings.isOfflineMode ? `${settings.offlineDocPath}${header.path}.html` : `https://en.cppreference.com/w/${header.path}`,
+                content: isOfflineMode ? `${offlineDocPath}${header.path}.html` : `https://en.cppreference.com/w/${header.path}`,
                 description: `${c.match(c.escape(header.name))} - ${c.dim(c.escape(header.description))}`
             }
         });
