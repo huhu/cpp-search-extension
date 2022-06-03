@@ -6,7 +6,8 @@ weight = 3
 
 # v0.3 - 2022-06-02
 
-- Migrate from `localStorage` to `chrome.storage` API. This will need `storage` permission.
+- Migrate from `localStorage` to `chrome.storage` API. The new `storage` permission is required.
+- Remove the `tabs` permission requirement.
 - Remove offline doc path validation. Fixes {{ issue(id=8) }}.
 
 # v0.2 - 2021-01-31
