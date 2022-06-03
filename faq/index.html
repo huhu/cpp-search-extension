@@ -109,17 +109,6 @@
                 
                 
                 <div class="toc-item">
-                    <a class="subtext" href="/faq/#permissions">Permissions</a>
-                </div>
-                
-                
-                <div class="toc-item-child">
-                    <a class="subtext" href="/faq/#why-does-the-extension-require-reading-browser-history-permission"><small>- Why does the extension require reading browser history permission?</small></a>
-                </div>
-                
-                
-                
-                <div class="toc-item">
                     <a class="subtext" href="/faq/#caveats">Caveats</a>
                 </div>
                 
@@ -146,10 +135,6 @@
 <h3 id="any-plans-to-support-safari">Any plans to support Safari?</h3>
 <p>Unfortunately, no. According to MDN's web extension <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs#omnibox">compatibility chart</a>:
 Safari doesn't support omnibox API, which is essential to this extension.</p>
-<h1 id="permissions">Permissions</h1>
-<h3 id="why-does-the-extension-require-reading-browser-history-permission">Why does the extension require reading browser history permission?</h3>
-<p>The sole permission required by the extension is <a href="https://developer.chrome.com/extensions/tabs">tabs</a>, which gives accessing browser tabs information capability.
-We use this permission to open the search result in the <code>current tab</code> or <code>new tab</code> for the sole purpose. Feel free to check our <a href="/privacy/">Privacy Policy</a> for more information.</p>
 <h1 id="caveats">Caveats</h1>
 <h3 id="why-local-file-doc-not-work-properly-on-firefox">Why local <code>file:</code> doc not work properly on Firefox?</h3>
 <p>For security reasons, in Firefox, <code>file:</code> URLs is an unprivileged URL, accessing to those unprivileged URLs are prohibited. 
