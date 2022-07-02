@@ -7,7 +7,7 @@ local icons() = {
 
 local json = manifest.new(
   name='C/C++ Search Extension',
-  version='0.3.0',
+  version='0.3.1',
   keyword='cc',
   description='The ultimate search extension for C/C++',
 )
