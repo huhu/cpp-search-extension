@@ -9,3 +9,6 @@ docs/public
 *.db
 manifest.json
 extension/core
+
+tools/target
+tools/Cargo.lock
