@@ -24,7 +24,7 @@ fn main() -> Result<()> {
     let search_index = parse_docs(&docs_path, raw_search_index)?;
     println!("Search index length: {}", search_index.len());
     let contents = serde_json::to_string(&search_index)?;
-    let path = Path::new("target/std.js");
+    let path = Path::new("../../extension/index/std.js");
     fs::write(path, format!("var searchIndex={};", contents))?;
     Ok(())
 }
