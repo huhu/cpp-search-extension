@@ -23,4 +23,5 @@ else
 
 json
 .addIcons(icons())
+.setOptionsUi('popup/index.html')
 .addPermissions(['storage', 'unlimitedStorage'])

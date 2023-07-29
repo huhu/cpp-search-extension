@@ -60,3 +60,9 @@ const c = new Compat();
         }
     });
 })();
+
+const chromeAction = chrome.action || chrome.browserAction;
+chromeAction.onClicked.addListener(() => {
+    let managePage = chrome.runtime.getURL("popup/index.html");
+    chrome.tabs.create({ url: managePage });
+});
