@@ -5,7 +5,7 @@ local icons() = {
 };
 
 local name = 'C/C++ Search Extension';
-local version = '0.3.1';
+local version = '0.4.0';
 local keyword = 'cc';
 local description = 'The ultimate search extension for C/C++';
 

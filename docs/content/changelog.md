@@ -4,6 +4,14 @@ description = "Changelog"
 weight = 3
 +++
 
+
+# v0.4 - 2023-07-29
+
+- Update to last cppreference.com docs
+- Add options page to configure offline docs path
+- Migrate to latest jsonnet
+- Add index generating tools
+
 # v0.3 - 2022-06-02
 
 - Migrate from `localStorage` to `chrome.storage` API. The new `storage` permission is required.
