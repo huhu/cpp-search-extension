@@ -1,7 +1,5 @@
 const c = new Compat();
 (async () => {
-    await migrate();
-
     // All dynamic setting items. Those items will been updated
     // in chrome.storage.onchange listener callback.
     let language = await settings.language;
@@ -62,8 +60,3 @@ const c = new Compat();
         }
     });
 })();
-
-let fileNewIssue = "title=Have you found a bug? Did you feel something was missing?&body=Whatever it was, we'd love to hear from you.";
-chrome.runtime.setUninstallURL(
-    `https://github.com/huhu/cpp-search-extension/issues/new?${encodeURI(fileNewIssue)}`
-);
