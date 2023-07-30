@@ -23,8 +23,10 @@
         --toc-highlight-text-color: #1dcbc3;
     }
 </style>
+    
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/juice.css">
     
@@ -61,7 +63,7 @@
 <header class="box-shadow">
     
 
-<a href="&#x2F;">
+<a href="/">
     <div class="logo">
         <img src="/logo.png" alt="logo">
         C&#x2F;C++ Search Extension
@@ -70,17 +72,29 @@
 
 <nav>
     
-    <a class="nav-item subtitle-text" href="&#x2F;testimonial&#x2F;">Testimonial</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;faq&#x2F;">FAQ</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+    <a class="nav-item subtitle-text" href="/testimonial/">Testimonial</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;privacy&#x2F;">Privacy</a>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/faq/">FAQ</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/changelog/">Changelog</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/privacy/">Privacy</a>
+    
     
     
         
-        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;huhu&#x2F;cpp-search-extension">Github</a>
+        <a class="nav-item subtitle-text" href="https://github.com/huhu/cpp-search-extension">Github</a>
         
     
 </nav>
@@ -96,6 +110,11 @@
         
         <div class="toc">
             <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/changelog/#v0-4-2023-07-29">v0.4 - 2023-07-29</a>
+                </div>
+                
                 
                 <div class="toc-item">
                     <a class="subtext" href="/changelog/#v0-3-2022-06-02">v0.3 - 2022-06-02</a>
@@ -120,6 +139,13 @@
         <div class="content text">
             
 <div class="heading-text">Changelog</div>
+<h1 id="v0-4-2023-07-29">v0.4 - 2023-07-29</h1>
+<ul>
+<li>Update to last cppreference.com docs</li>
+<li>Add options page to configure offline docs path</li>
+<li>Migrate to latest jsonnet</li>
+<li>Add index generating tools</li>
+</ul>
 <h1 id="v0-3-2022-06-02">v0.3 - 2022-06-02</h1>
 <ul>
 <li>Migrate from <code>localStorage</code> to <code>chrome.storage</code> API. The new <code>storage</code> permission is required.</li>
@@ -171,38 +197,28 @@
 
 </body>
 <script>
-    function highlightNav(heading) {
-        let pathname = location.pathname;
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
         document.querySelectorAll(".toc a").forEach((item) => {
             item.classList.remove("active");
         });
-        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
-    }
 
-    let currentHeading = "";
-    window.onscroll = function () {
-        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        let elementArr = [];
-
-        h.forEach(item => {
-            if (item.id !== "") {
-                elementArr[item.id] = item.getBoundingClientRect().top;
-            }
-        });
-        elementArr.sort();
-        for (let key in elementArr) {
-            if (!elementArr.hasOwnProperty(key)) {
-                continue;
-            }
-            if (elementArr[key] > 0 && elementArr[key] < 300) {
-                if (currentHeading !== key) {
-                    highlightNav(key);
-                    currentHeading = key;
-                }
-                break;
-            }
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
-    }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
 </script>
 
 </html>

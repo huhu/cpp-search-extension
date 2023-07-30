@@ -23,8 +23,10 @@
         --toc-highlight-text-color: #1dcbc3;
     }
 </style>
+    
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/juice.css">
     
@@ -62,7 +64,7 @@
     <header class="pos-absolute" style="background-color: transparent">
         
 
-<a href="&#x2F;">
+<a href="/">
     <div class="logo">
         <img src="/logo.png" alt="logo">
         C&#x2F;C++ Search Extension
@@ -71,17 +73,29 @@
 
 <nav>
     
-    <a class="nav-item subtitle-text" href="&#x2F;testimonial&#x2F;">Testimonial</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;faq&#x2F;">FAQ</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+    <a class="nav-item subtitle-text" href="/testimonial/">Testimonial</a>
     
-    <a class="nav-item subtitle-text" href="&#x2F;privacy&#x2F;">Privacy</a>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/faq/">FAQ</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/changelog/">Changelog</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/privacy/">Privacy</a>
+    
     
     
         
-        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;huhu&#x2F;cpp-search-extension">Github</a>
+        <a class="nav-item subtitle-text" href="https://github.com/huhu/cpp-search-extension">Github</a>
         
     
 </nav>
@@ -102,7 +116,7 @@
     <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
         <a class="subtitle-text" style="text-decoration: underline; margin: 10px"
            href="https://github.com/huhu/cpp-search-extension/releases">
-            Current version 0.3.0
+            Current version 0.4.0
         </a>
         <a class="btn-download chrome"
            href="https://chrome.google.com/webstore/detail/cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd"
@@ -240,38 +254,28 @@ However, please check the <a href="/faq/#caveats">Caveats</a> if you are a Firef
 
 </body>
 <script>
-    function highlightNav(heading) {
-        let pathname = location.pathname;
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
         document.querySelectorAll(".toc a").forEach((item) => {
             item.classList.remove("active");
         });
-        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
-    }
 
-    let currentHeading = "";
-    window.onscroll = function () {
-        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        let elementArr = [];
-
-        h.forEach(item => {
-            if (item.id !== "") {
-                elementArr[item.id] = item.getBoundingClientRect().top;
-            }
-        });
-        elementArr.sort();
-        for (let key in elementArr) {
-            if (!elementArr.hasOwnProperty(key)) {
-                continue;
-            }
-            if (elementArr[key] > 0 && elementArr[key] < 300) {
-                if (currentHeading !== key) {
-                    highlightNav(key);
-                    currentHeading = key;
-                }
-                break;
-            }
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
-    }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
 </script>
 
 </html>
