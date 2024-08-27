@@ -6,7 +6,7 @@ sort_by = "weight"
 # Search std docs
 
 We built an offline search index for C/C++ std library based on [cppreference.com](https://en.cppreference.com/w/).
-Input any keyword in the address bar, you'll get the result instantly. It's blaze-fast!  
+Input any keyword in the address bar, you'll get the result instantly. It's blaze-fast!
 
 ![GIF](/cpp-search-extension.gif)
 
@@ -24,7 +24,7 @@ The command system brings a handy set of useful and convenient commands to you. 
 
 - `:help` - Show the help messages.
 - `:header` - Show all C++ header libraries.
-- `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html).
+- `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9799919799/functions/contents.html).
 - `:history` - Show your local search history
 
 ![GIF](/commands.png)

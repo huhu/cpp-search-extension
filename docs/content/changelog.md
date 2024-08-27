@@ -22,7 +22,7 @@ weight = 3
 
 - Support multi-locale language cppreference docs search
 - New command:
-  - `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html)
+  - `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9799919799/functions/contents.html)
 - Improve user experience of offline doc path configuration, thanks to the PR ([#3](https://github.com/huhu/cpp-search-extension/pull/3)) from [@knewbie](https://github.com/knewbie).
 
 # v0.1 - 2020-09-30
