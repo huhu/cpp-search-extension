@@ -11,7 +11,7 @@ type Result<T> = std::result::Result<T, Box<dyn Error>>;
 
 fn main() -> Result<()> {
     // A path such as:  ~/Downloads/susv4-2018/idx
-    // Download from: https://pubs.opengroup.org/onlinepubs/9699919799/download/index.html
+    // Download from: https://pubs.opengroup.org/onlinepubs/9799919799/download/index.html
     let dir = env::args().nth(1).unwrap();
     let mut map = HashMap::new();
     for entry in fs::read_dir(dir)? {

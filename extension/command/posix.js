@@ -27,7 +27,7 @@ class PosixCommand extends Command {
         }
         return results.map(item => {
             return {
-                content: `https://pubs.opengroup.org/onlinepubs/9699919799/functions/${item.name}.html`,
+                content: `https://pubs.opengroup.org/onlinepubs/9799919799/functions/${item.name}.html`,
                 description: `${c.match(c.escape(item.name))} - ${c.dim(c.escape(item.description))}`
             };
         });
