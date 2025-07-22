@@ -18,7 +18,8 @@ theme = "juice"
 juice_logo_name = "C/C++ Search Extension"
 juice_logo_path = "logo.png"
 juice_extra_menu = [
-    { title = "Github", link = "https://github.com/huhu/cpp-search-extension"}
+    { title = "Geddle", link = "https://geddle.com" },
+    { title = "Github", link = "https://github.com/huhu/cpp-search-extension" }
 ]
 repository_url = "https://github.com/huhu/cpp-search-extension"
 meta_title = "C/C++ Search Extension: The ultimate search extension for C/C++"
